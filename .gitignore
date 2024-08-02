@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# VS Code directories
+.vscode/
+.history/
+
+# MacOS files
+.DS_Store
+
+# Webpack output
+dist/
+build/
