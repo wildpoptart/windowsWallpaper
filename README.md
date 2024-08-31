@@ -40,6 +40,8 @@ Wallpaper Manager is an Electron application that allows users to manage multi-w
 - Choose a new image from your files.
 - The application will update the wallpaper accordingly.
 
+- **This will remove current wallpaper. You'll have to reapply your currently set wallpaper
+
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
