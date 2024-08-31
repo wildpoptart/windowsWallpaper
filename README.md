@@ -3,9 +3,8 @@
 ## Description
 Wallpaper Manager is an Electron application that allows users to manage multi-window wallpapers with ease. It provides functionality to set wallpapers for multiple monitors and create composite wallpapers.
 
-{{ edit_1 }}
+## Preview
 ![Wallpaper Manager Preview](preview_image.png)
-{{ edit_2 }}
 
 ## Features
 - Get and set wallpapers for connected monitors.
