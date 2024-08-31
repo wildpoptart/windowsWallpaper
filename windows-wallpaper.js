@@ -46,7 +46,15 @@ function getCurrentWallpaper() {
 function setCurrentWallpaper(wallpaperPath) {
     const wallpaperBuffer = Buffer.from(wallpaperPath + '\0', 'ucs2');
     user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, wallpaperBuffer, 0);
+
+    const escapedPath = wallpaperPath.replace(/\\/g, '\\\\');
+    // Update the wallpaper path in the registry
+    execSync(`REG ADD "HKCU\\Control Panel\\Desktop" /v Wallpaper /t REG_SZ /d "${wallpaperPath}" /f`);
+
+    // Set the wallpaper style to "Fit" (value 22)
     execSync(`REG ADD "HKCU\\Control Panel\\Desktop" /v WallpaperStyle /t REG_SZ /d 22 /f`);
+
+    // Disable wallpaper tiling
     execSync(`REG ADD "HKCU\\Control Panel\\Desktop" /v TileWallpaper /t REG_SZ /d 0 /f`);
     // execSync(`SystemParametersInfoW`, [20, 0, wallpaperBuffer, 2]);
 }
